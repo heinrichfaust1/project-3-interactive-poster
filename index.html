@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    display: grid;
+    background-color: #fdfaec;
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    color: #dcddde;
+    font-family: Helvetica;
+    font-size: 60px;
+}
+
+.tranquilized {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 670px;
+    height: auto;
+}
+.again {
+    position: absolute;
+    top: 86px;
+    left: 260px;
+    width: 150px;
+    height: auto;
+}
+.europe {
+    position: absolute;
+    top: 150px;
+    left: 170px;
+    z-index: 4;
+}
+.europe img {
+    width: 400px;
+    height: auto;
+}
+.city {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+}
+.city img { 
+    width: 250px; 
+    height: auto; 
+}
+
+
+.liege {top: 330px; left: 100px;}
+.esa {top: 370px; left: 100px;}
+.bonn {top: 410px; left: 100px;}
+.berlin {top: 450px; left: 100px;}
+.prague {top: 490px; left: 100px;}
+.lodz {top: 530px; left: 100px;}
+
+.numbbars {
+    position: absolute;
+    width: 59px;
+    height: 233px;
+    left: 6px;
+    top: 330px;
+}
+
+.aprilbar {
+    position: absolute;
+    top: 170px;
+    left: 10px;
+}
+
+.aprilbar img {
+    width: 55px;
+    height: 150px;
+}
+
+.date {
+    position: absolute;
+    left: 9px;
+    width: 40px;
+    height: 40px;
+    font-size: 36px;
+    color: #000000;
+    font-weight: 1000;
+    line-height: 32px;
+    letter-spacing: -2px;
+    text-align: center;
+    z-index: 5;
+}
+
+.date1 {top: 333px;}
+.date2 {top: 370px;}
+.date3 {top: 409px;}
+.date4 {top: 446px;}
+.date5 {top: 484px;}
+.date6 {top: 523px;}
+
+.date.active {color: #ed3324;}
+
+.rectangle {
+    position: absolute;
+    left: 400px;
+    width: 300px;
+    height: 35px;
+    z-index: 2;
+}
+
+.rectangle img {
+    display: block;
+    width: 300px;
+    height: 35px;
+}
+
+.rectangle1 {top: 330px;}
+.rectangle2 {top: 370px;}
+.rectangle3 {top: 410px;}
+.rectangle4 {top: 450px;}
+.rectangle5 {top: 490px;}
+.rectangle6 {top: 530px;}
+
+.venue {
+    position: absolute;
+    left: 400px;
+    width: 300px;
+    height: 35px;
+    color: #ffffff;
+    padding: 3px 5px;
+    box-sizing: border-box;
+    font-size: 9px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 0.85;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.venue strong {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.venue span {
+    font-size: 7px;
+    font-weight: normal;
+}
+
+.venue1 {top: 330px;}
+.venue2 {top: 370px;}
+.venue3 {top: 410px;}
+.venue4 {top: 450px;}
+.venue5 {top: 490px;}
+.venue6 {top: 530px;}
+
+.grid {
+    position: absolute;
+    width: 850px;
+    height: 610px;
+    left: 680px;
+    top: -23px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#cityScreen {
+    position: absolute;
+    width: 850px;
+    height: 610px;
+    left: 680px;
+    top: -23px;
+    z-index: 2;
+    display: block;
+    pointer-events: none;
+}
+
+.opntour {
+    position: absolute;
+    top: 290px;
+    left: 100px;
+    width: 2000px;
+    height: 35px;
+    color: #000000;
+    padding: 3px 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 0.85;
+    z-index: 3;
+}
+
+.april {position: absolute;
+    top: 270px;
+    left: 10px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 1000;
+    letter-spacing: -0.5px;
+    color: #000000
+}
+
+.pointnever {
+    position: absolute;
+    top: 249px;
+    left: 582px;
+    z-index: 9999;
+}
+
+.pointnever h1 {
+    position: static;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.pointnever a {
+    display: inline-block;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 9999;
+}
+
+.pointnever a:hover {
+    color: #ed3324;
+}
+
+.aea {position: absolute;
+    top: 305px;
+    left: 100px;
+    width: 2000px;
+    height: 35px;
+    color: #000000;
+    padding: 3px 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 0.85;
+    z-index: 3;}
+
+.graphic1 {
+    position: absolute;
+    top: 600px;
+    left: 10px;
+    width: 500px;
+    height: auto;
+}
+.graphic2 {
+    position: absolute;
+    top: 610px;
+    left: 1350px;
+    width: 125px;
+    height: auto;
+}
+.graphic3 {
+    position: absolute;
+    top: 610px;
+    left: 1080px;
+    width: 120px;
+    height: auto;
+}
+.graphic4 {
+    position: absolute;
+    top: 600px;
+    left: 1240px;
+    width: 80px;
+    height: auto;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img src="TRANQUILIZED.svg" class="tranquilized">
+<img src="AGAININ.svg" class="again">
+<div class="europe">
+    <img id="cityTitle" src="EUROPESVG.svg">
+</div>
+
+<img src="GRID.svg" class="grid">
+<img src="screen-default.svg" id="cityScreen">
+<img src="NUMBBARS.svg" class="numbbars">
+
+<img src="liege-black.svg" class="city liege"
+data-city="liege">
+<img src="esa-black.svg" class="city esa"
+data-city="esa">
+<img src="bonn-black.svg" class="city bonn"
+data-city="bonn">
+<img src="berlin-black.svg" class="city berlin"
+data-city="berlin">
+<img src="prague-black.svg" class="city prague"
+data-city="prague">
+<img src="lodz-black.svg" class="city lodz"
+data-city="lodz">
+
+<div class="rectangle rectangle1">
+    <img id="rectangle1" src="RECTANGLE1.png">
+</div>
+
+<div class="rectangle rectangle2">
+    <img id="rectangle2" src="RECTANGLE2.png">
+</div>
+
+<div class="rectangle rectangle3">
+    <img id="rectangle3" src="RECTANGLE3.png">
+</div>
+
+<div class="rectangle rectangle4">
+    <img id="rectangle4" src="RECTANGLE4.png">
+</div>
+
+<div class="rectangle rectangle5">
+    <img id="rectangle5" src="RECTANGLE5.png">
+</div>
+
+<div class="rectangle rectangle6">
+    <img id="rectangle6" src="RECTANGLE6.png">
+</div>
+
+<div class="date date1" id="date1">10</div>
+<div class="date date2" id="date2">13</div>
+<div class="date date3" id="date3">16</div>
+<div class="date date4" id="date4">20</div>
+<div class="date date5" id="date5">23</div>
+<div class="date date6" id="date6">26</div>
+
+<div class="venue venue1">
+    <strong>OVERFLOW – – – – – – – – – – – – – – – – – – – – – – – –</strong><br>
+    <span>RUE DES CARMES 9  – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –   </span><br>
+    <span>LIÈGE, BELGIUM – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – </span>
+</div>
+
+<div class="venue venue2">
+    <strong>KULTURFABRIK  – – – – – – – – – – – – – – – – – – – – – –</strong>
+    <span>116 RUE DE LUXEMBOURG – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – </span>
+    <span>ESCH-SUR-ALZETTE, LUXEMBOURG – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – </span>
+</div>
+
+<div class="venue venue3">
+    <strong>SILENT GREEN KULTURQUARTIER – – – – – – – – – – </strong>
+    <span>GERICHTSTRAßE 35 – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –</span>
+    <span>BERLIN, GERMANY – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – </span>
+</div>
+
+<div class="venue venue4">
+    <strong>BROTFABRIK BONN – – – – – – – – – – – – – – – – – – – </strong>
+    <span>KREUZSTRAßE 16 – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – </span>
+    <span>BONN, GERMANY – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –</span>
+</div>
+
+<div class="venue venue5">
+    <strong>NATIONAL GALLERY PRAGUE – – – – – – – – – – – – – </strong>
+    <span>DUKELSKÝCH HRDINŮ 47 – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –  –</span>
+    <span>PRAGUE, CZECH REPUBLIC  – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – </span>
+</div>
+
+<div class="venue venue6">
+    <strong>FABRYKA SZTUKI – – – – – – – – – – – – – – – – – – – – – </strong>
+    <span>UL. KS. BP. WINCENTEGO TYMIENIECKIEGO 3 – – – – – – – – – – – – – – – – – – – – – – – – – – </span>
+    <span>90-365 ŁÓDŹ, POLAND – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – </span>
+</div>
+
+<div class="opntour">
+<span>O – – – – – – – – – – P – – – – – – – – – –[T O U R] – – – – – – – – – – N</span>
+</div>
+
+<div class="pointnever">
+    <a href="https://pointnever.com">
+        <h1>pointnever.com</h1>
+    </a>
+</div>
+
+
+<div class="april">
+<h1>APRIL</h1>
+</div>
+
+
+<div class="aea">
+<span>T R A N Q U I L I Z E D [ A G A I N ] – – – – – – – – E U R O P E – – – – – – – – A P R I L</span>
+</div>
+
+<img src="GRAPHHIC1.svg" class="graphic1">
+<img src="GRAPHIC2.svg" class="graphic2">
+<img src="GRAPHIC3.svg" class="graphic3">
+<img src="GRAPHIC4.svg" class="graphic4">
+
+<script>
+const cities = {
+
+    liege: {
+        red: "liege-red.svg",
+        black: "liege-black.svg",
+
+        date: "date1",
+
+        rectangle: "rectangle1",
+        rectangleBlack: "RECTANGLE1.png",
+        rectangleRed: "RECTANGLE1-RED.png",
+
+        screen: "liege-screen.svg"
+    },
+
+    esa: {
+        red: "esa-red.svg",
+        black: "esa-black.svg",
+
+        date: "date2",
+
+        rectangle: "rectangle2",
+        rectangleBlack: "RECTANGLE2.png",
+        rectangleRed: "RECTANGLE2-RED.png",
+
+        screen: "esa-screen.svg"
+    },
+
+    bonn: {
+        red: "bonn-red.svg",
+        black: "bonn-black.svg",
+
+        date: "date3",
+
+        rectangle: "rectangle3",
+        rectangleBlack: "RECTANGLE3.png",
+        rectangleRed: "RECTANGLE3-RED.png",
+
+        screen: "bonn-screen.svg"
+    },
+
+    berlin: {
+        red: "berlin-red.svg",
+        black: "berlin-black.svg",
+
+        date: "date4",
+
+        rectangle: "rectangle4",
+        rectangleBlack: "RECTANGLE4.png",
+        rectangleRed: "RECTANGLE4-RED.png",
+
+        screen: "berlin-screen.svg"
+    },
+
+    prague: {
+        red: "prague-red.svg",
+        black: "prague-black.svg",
+
+        date: "date5",
+
+        rectangle: "rectangle5",
+        rectangleBlack: "RECTANGLE5.png",
+        rectangleRed: "RECTANGLE5-RED.png",
+
+        screen: "prague-screen.svg"
+    },
+
+    lodz: {
+        red: "lodz-red.svg",
+        black: "lodz-black.svg",
+
+        date: "date6",
+
+        rectangle: "rectangle6",
+        rectangleBlack: "RECTANGLE6.png",
+        rectangleRed: "RECTANGLE6-RED.png",
+
+        screen: "lodz-screen.svg"
+    }
+
+};
+
+const cityTitle = document.getElementById("cityTitle");
+
+const cityScreen = document.getElementById("cityScreen");
+
+function activateCity(cityName) {
+
+    const data = cities[cityName];
+
+    if (!data) return;
+
+    const cityImage = document.querySelector(
+        `.city[data-city="${cityName}"]`
+    );
+
+    cityImage.src = data.red;
+
+    cityTitle.src = data.red;
+
+    document.getElementById(data.date)
+        .classList.add("active");
+
+    document.getElementById(data.rectangle).src =
+        data.rectangleRed;
+
+    cityScreen.src = data.screen;
+
+}
+
+function deactivateCity(cityName) {
+
+    const data = cities[cityName];
+
+    if (!data) return;
+
+    const cityImage = document.querySelector(
+        `.city[data-city="${cityName}"]`
+    );
+
+    cityImage.src = data.black;
+
+    cityTitle.src = "EUROPESVG.svg";
+
+    document.getElementById(data.date)
+        .classList.remove("active");
+
+    document.getElementById(data.rectangle).src =
+        data.rectangleBlack;
+
+    cityScreen.src = "screen-default.svg";
+
+}
+
+document.querySelectorAll(".city").forEach(city => {
+
+    const cityName = city.dataset.city;
+
+    city.addEventListener("mouseenter", () => {
+        activateCity(cityName);
+    });
+
+    city.addEventListener("mouseleave", () => {
+        deactivateCity(cityName);
+    });
+
+});
+
+</script>
+
+</body>
+</html>
